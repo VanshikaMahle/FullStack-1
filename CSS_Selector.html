@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <!--Internal CSS using style tag in head section-->
+    <style>
+        /* 1. Type Selector */
+        
+        p,
+        h2,
+        h1 {
+            color: blue;
+        }
+        /* 2. Universal Selector */
+        /*
+        * {
+            font-size: 20px;
+        }
+        */
+        /* 3. Descendant Selector */
+        
+        div p {
+            background-color: yellow;
+        }
+        /* 4. Child Selector */
+        
+        div>p {
+            text-decoration: line-through;
+        }
+        /* 5. ID Selector */
+        
+        #para2 {
+            text-align: right;
+        }
+        
+        #Head1 {
+            background-color: black;
+            color: blanchedalmond;
+        }
+        /* 6. Class Selector */
+        
+        .class1 {
+            background-color: brown;
+            color: blue;
+        }
+        
+        .class2 {
+            background-color: cadetblue;
+            color: green;
+        }
+        
+        .class2 b {
+            text-decoration: underline;
+        }
+        
+        h1.class2 {
+            font-size: 20px;
+        }
+        /* 7.Attribute Selector */
+        
+        h1,
+        p[class] {
+            text-shadow: 2px 2px 4px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="Head1">Heading1</h1>
+        <h2 class="class1">Heading2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam atque debitis natus est minima, enim voluptatem deserunt repellendus perferendis voluptatibus ea? Quis ullam in impedit molestias eligendi modi, magni eos laboriosam eaque aperiam
+            quam rem optio. Maxime nam corporis explicabo libero culpa cumque enim rerum deserunt iusto laborum, ipsam facilis vel aspernatur. Nobis, nemo. Officia, est! Suscipit omnis, dolorum voluptates ea beatae maxime fugiat quis necessitatibus molestiae
+            ipsum modi illum placeat illo dicta in nisi nemo totam. Ex deleniti velit consectetur enim sit aperiam neque illum vel? Ipsam, dolore excepturi. Nam itaque magni veniam aut provident officiis minus dolorum?</p>
+    </div>
+    <div>
+        <blockquote>
+            <h1>Heading1</h1>
+            <h2>Heading2</h2>
+            <p id="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam atque debitis natus est minima, enim voluptatem deserunt repellendus perferendis voluptatibus ea? Quis ullam in impedit molestias eligendi modi, magni eos laboriosam eaque
+                aperiam quam rem optio. Maxime nam corporis explicabo libero culpa cumque enim rerum deserunt iusto laborum, ipsam facilis vel aspernatur. Nobis, nemo. Officia, est! Suscipit omnis, dolorum voluptates ea beatae maxime fugiat quis necessitatibus
+                molestiae ipsum modi illum placeat illo dicta in nisi nemo totam. Ex deleniti velit consectetur enim sit aperiam neque illum vel? Ipsam, dolore excepturi. Nam itaque magni veniam aut provident officiis minus dolorum?</p>
+        </blockquote>
+    </div>
+    <div>
+        <h1 class="class2">Heading1</h1>
+        <h2 class="class1">Heading2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam atque debitis natus est minima, enim voluptatem deserunt repellendus perferendis voluptatibus ea? Quis ullam in impedit molestias eligendi modi, magni eos laboriosam eaque aperiam
+            quam rem optio. Maxime nam corporis explicabo libero culpa cumque enim rerum deserunt iusto laborum, ipsam facilis vel aspernatur. Nobis, nemo. Officia, est! Suscipit omnis, dolorum voluptates ea beatae maxime fugiat quis necessitatibus molestiae
+            ipsum modi illum placeat illo dicta in nisi nemo totam. Ex deleniti velit consectetur enim sit aperiam neque illum vel? Ipsam, dolore excepturi. Nam itaque magni veniam aut provident officiis minus dolorum?</p>
+    </div>
+    <p class="class2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam ea inventore! Deserunt recusandae labore, eum suscipit quaerat maxime quam et dolor nam quasi repudiandae reiciendis error similique velit asperiores tempore ex animi? Commodi
+        voluptates ad delectus voluptatum id repellat debitis perspiciatis doloremque ab omnis, libero ducimus, sint beatae nisi explicabo earum nemo distinctio magni modi minus consectetur nostrum. Vel molestiae est beatae dolorem consequatur, reprehenderit
+        mollitia nulla illo sint repellat ullam voluptas quod libero! Doloremque fugit sint placeat facere et hic accusamus consectetur ullam facilis, possimus quas numquam. Commodi sint dolorum adipisci facere aspernatur laudantium necessitatibus itaque
+        quod provident.</p>
+    <h2 class="class2"><b>This is a heading.</b></h2>
+    <h1 class="class2">Hello</h1>
+</body>
+
+</html>
