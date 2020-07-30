@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+        #span2 {
+            /*display: none;*/
+            visibility: hidden;
+        }
+        
+        a {
+            margin-top: 20px;
+            width: 200px;
+            display: block;
+            border: 2px solid orange;
+            padding: 10px;
+            text-align: justify;
+            background-color: palegreen;
+            text-decoration: none;
+            color: white;
+        }
+        
+        a:hover {
+            background-color: yellowgreen;
+        }
+        
+        #span1 {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            margin: 20px;
+            padding: 30px;
+            background-color: palevioletred;
+        }
+        
+        p {
+            border: 1px solid red;
+            display: inline;
+        }
+        
+        #para2 {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <span style="background-color: yellow;">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae totam cupiditate blanditiis distinctio soluta similique id nihil nobis officiis quasi, necessitatibus, dignissimos beatae officia fugit doloribus dolorem iusto ullam minima! Recusandae
+        delectus incidunt cumque iure. Quae amet hic deleniti labore soluta dolore porro quod repellat aut vero optio tenetur repudiandae laborum rerum sint id aliquid, reiciendis exercitationem! Rerum doloribus nulla possimus praesentium fugit vero ipsum
+        a nobis et cumque accusamus labore eveniet repellat odio, error illum consectetur tempore quos distinctio fuga pariatur commodi cum aliquid ab! Mollitia delectus provident vero totam voluptate, fuga praesentium asperiores deleniti, commodi quisquam
+        ipsam architecto!</p>
+    <p id="para2">Helllo World</p>
+    Lorem ipsum dolor<span id="span1">sit amet consectetur adipisicing elit.</span> Quam, quisquam enim voluptas eligendi sequi praesentium. Rem vero autem delectus ipsam!
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ea quam expedita veritatis ut alias error eligendi ipsam iste maiores, voluptatibus numquam doloribus corporis nemo deserunt unde, hic quibusdam temporibus. Adipisci alias quod cum
+        fugiat culpa rem ratione quia nemo non dolore quam deleniti explicabo iusto et, vitae provident aperiam vero, deserunt illum accusamus. Quibusdam laborum, ea ipsam exercitationem perspiciatis esse velit dolor, incidunt accusamus cum, voluptatum
+        numquam? Ipsum doloribus ipsa voluptatem illum at amet similique? Dolore dicta atque vel obcaecati nobis cupiditate nulla ipsum accusantium, neque ullam animi error est perferendis doloremque libero odit placeat quae sit, accusamus sed?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, quo. Modi ab consequuntur culpa atque rerum nobis maxime dolor consectetur, eveniet commodi id autem, assumenda nemo non veniam tenetur explicabo facilis at incidunt nam ducimus repellat
+        necessitatibus. Laudantium, et. Ex delectus dignissimos excepturi exercitationem quidem, accusantium dolor, blanditiis fuga, vel praesentium in deserunt aliquam nemo distinctio reprehenderit quis sunt sint nam asperiores tenetur libero sit. Optio
+        quae culpa nemo nostrum aliquid sunt distinctio nulla excepturi, voluptas commodi sapiente maiores explicabo natus exercitationem numquam, harum praesentium ipsum deserunt, possimus ratione quod fuga! Debitis quia recusandae accusantium excepturi
+        praesentium voluptas. Ratione, quidem?</p>
+    <span id="span2"> ipsum dolor sit amet, consectetur adipisicing elit.umquam amet quae quod provident debitis asperiores consectetur voluptatibus quia laboriosam nihil, reprehenderit illo aperiam doloribus consequuntur iste facilis placeat
+    non, ut ad distinctio beatae? Fuga tenetur ducimus est maiores eveniet quaerat doloremque, blanditiis ipsam, illo minus alias dolor minima non facilis.
+</span>
+    <a href="#" onclick="hello()">this is a link.</a>
+    <script>
+        function hello() {
+            document.getElementById("span2").style.display = 'inline';
+        }
+    </script>
+    </span>
+</body>
+
+</html>
