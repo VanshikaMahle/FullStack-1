@@ -12,97 +12,448 @@
         }
         
         #container {
-            border: solid;
             width: 980px;
-            margin: 0px auto;
+            border: solid;
             padding: 15px;
+            margin: 0px auto;
         }
+        /* 1. 1201 or more -- extra large screen (LED)
+        2. 1025 to 1200 -- large screen (17 inch)
+        3. 768 to 1024 -- mediam large display (laptop small monitors)
+        4. 481 to 767 -- mediam devices (tablets)
+        5. upto 480 -- mobile devices */
+        /* Breakpoint-1 */
         
-        #header {
-            background-color: lightgray;
-            height: 70px;
-            width: 100%;
-            border-radius: 15px;
-            /* content center to the screen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 40px;
-            margin-bottom: 15px;
+        @media(min-width: 1201px) {
+            #header {
+                background-color: lightgray;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #content {
+                /*border: 5px solid red;*/
+            }
+            #content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            #left-sidebar {
+                width: 20%;
+                /*border: solid blue;*/
+                height: 515px;
+                float: left;
+            }
+            #nav {
+                width: 100%;
+                height: 300px;
+                background-color: blueviolet;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                border-radius: 15px;
+            }
+            #news {
+                width: 100%;
+                height: 200px;
+                background-color: yellow;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+            }
+            #right-sidebar {
+                width: 78%;
+                /*border: solid green;*/
+                height: 515px;
+                float: right;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #footer {
+                background-color: lightblue;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
         }
+        /* Breakpoint-2 */
         
-        #content {
-            /*border: 5px solid red;*/
+        @media(min-width: 1025px) and (max-width: 1200px) {
+            #header {
+                background-color: lightgray;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #content {
+                /*border: 5px solid red;*/
+            }
+            #content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            #left-sidebar {
+                width: 20%;
+                /*border: solid blue;*/
+                /*height: 515px;*/
+                float: left;
+                /* code to reorder the elements */
+                display: flex;
+                flex-direction: column;
+            }
+            #nav {
+                order: 2;
+                width: 100%;
+                height: 300px;
+                background-color: blueviolet;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                border-radius: 15px;
+            }
+            #news {
+                order: 1;
+                width: 100%;
+                height: 200px;
+                background-color: yellow;
+                /*margin-bottom: 15px;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+            }
+            #right-sidebar {
+                width: 78%;
+                /*border: solid green;*/
+                height: 515px;
+                float: right;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #footer {
+                background-color: lightblue;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
         }
+        /* Breakpoint-3 */
         
-        #content::after {
-            content: '';
-            display: block;
-            clear: both;
+        @media(min-width: 768px) and (max-width: 1024px) {
+            #header {
+                background-color: lightgray;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #content {
+                /*border: 5px solid red;*/
+            }
+            #content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            #left-sidebar {
+                width: 20%;
+                /*border: solid blue;*/
+                height: 515px;
+                float: left;
+            }
+            #nav {
+                width: 100%;
+                height: 515px;
+                background-color: blueviolet;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                border-radius: 15px;
+            }
+            #news {
+                /*width: 100%;
+                height: 200px;
+                background-color: yellow;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+                border-radius: 15px;*/
+                display: none;
+            }
+            #right-sidebar {
+                width: 78%;
+                /*border: solid green;*/
+                height: 515px;
+                float: right;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #footer {
+                background-color: lightblue;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
         }
+        /* Breakpoint-4 */
         
-        #left-sidebar {
-            width: 20%;
-            /*border: solid blue;*/
-            height: 515px;
-            float: left;
+        @media (min-width: 481px) and (max-width: 767px) {
+            #header {
+                background-color: lightgray;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #content {
+                /*border: 5px solid red;*/
+                display: flex;
+                flex-direction: column;
+            }
+            #content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            #left-sidebar {
+                order: 2;
+                width: 100%;
+                /*border: solid blue;*/
+                /*height: 515px;
+                float: left;*/
+                /*code to reorder the elements*/
+                display: flex;
+                flex-direction: row;
+            }
+            #nav {
+                order: 2;
+                width: 68%;
+                height: 100px;
+                background-color: blueviolet;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                border-radius: 15px;
+                margin-left: 15px;
+            }
+            #news {
+                order: 1;
+                width: 30%;
+                height: 100px;
+                background-color: yellow;
+                /*margin-bottom: 15px;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+                float: right;
+            }
+            #right-sidebar {
+                order: 1;
+                width: 100%;
+                /*border: solid green;*/
+                height: 515px;
+                float: right;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #footer {
+                background-color: lightblue;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
         }
+        /* Breakpoint-5 */
         
-        #nav {
-            width: 100%;
-            height: 300px;
-            background-color: blueviolet;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 40px;
-            border-radius: 15px;
-        }
-        
-        #news {
-            width: 100%;
-            height: 200px;
-            background-color: yellow;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 40px;
-            margin-bottom: 15px;
-            border-radius: 15px;
-        }
-        
-        #right-sidebar {
-            width: 78%;
-            /*border: solid green;*/
-            height: 515px;
-            float: right;
-            background-color: orangered;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 15px;
-            color: white;
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        
-        #footer {
-            background-color: lightblue;
-            height: 70px;
-            width: 100%;
-            border-radius: 15px;
-            /* content center to the screen */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 40px;
-            margin-bottom: 15px;
+        @media (max-width: 480px) {
+            #header {
+                background-color: lightgray;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #content {
+                /*border: 5px solid red;*/
+            }
+            #content::after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+            #left-sidebar {
+                width: 20%;
+                /*border: solid blue;*/
+                height: 215px;
+                float: left;
+            }
+            #nav {
+                width: 100%;
+                height: 100px;
+                background-color: blueviolet;
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                border-radius: 15px;
+            }
+            #news {
+                order: 1;
+                width: 100%;
+                height: 100px;
+                background-color: yellow;
+                /*margin-bottom: 15px;*/
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+            }
+            #right-sidebar {
+                width: 78%;
+                /*border: solid green;*/
+                height: 215px;
+                float: right;
+                background-color: orangered;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            #footer {
+                background-color: lightblue;
+                height: 70px;
+                width: 100%;
+                border-radius: 15px;
+                /* content center to the screen */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
