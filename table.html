@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: aqua;
+            margin: 20px auto;
+        }
+        /* tr {
+            background-color: darkgreen;
+        }
+         */
+        
+        th {
+            background-color: beige;
+            color: brown;
+        }
+        
+        tfoot tr {
+            background-color: cadetblue !important;
+        }
+        
+        tr:nth-child(even) {
+            background-color: coral;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: darkgoldenrod;
+        }
+        
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid;
+            padding: 10px;
+            /* border-spacing: 10px;
+            border-collapse: collapse; */
+            text-align: center;
+        }
+        
+        caption {
+            caption-side: bottom;
+            color: red;
+            margin-top: 10px;
+            font-size: small;
+        }
+        
+        .mycol {
+            background-color: darkgreen !important;
+        }
+        
+        .mycol1 {
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="800" align="center">
+        <!-- <colgroup>
+            <col span="2" style="background-color: darkgray; !important;" />
+        </colgroup> -->
+        <colgroup>
+            <col class="mycol" span="1" />
+            <col class="mycol1" span="1" />
+        </colgroup>
+        <caption>
+            List of Courses
+        </caption>
+
+        <thead>
+            <tr>
+                <th>Course name</th>
+                <th>Course duration</th>
+                <th>Course cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Programming Languages</td>
+                <td>3 months</td>
+                <td>Rs. 4000</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Web Development
+                    <!-- <table align="center">
+                        <tr>
+                            <td>Front-End</td>
+                            <td>Back-End</td>
+                        </tr>
+
+                    </table> -->
+                </td>
+                <td width="100">4 months</td>
+                <td>Rs. 5000</td>
+            </tr>
+            <tr>
+                <!-- <td>Server side Programming</td> -->
+                <td>6 months</td>
+                <td>Rs. 35000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+
+                <td colspan="2">Total Cost</td>
+                <td>Rs. 48000</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
