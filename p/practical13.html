@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical13</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .content {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: black;
+            font-weight: bolder;
+        }
+        
+        footer {
+            width: 100%;
+            background-color: rgb(43, 32, 32);
+        }
+        
+        .sec-1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 30px 10px;
+            justify-content: space-between;
+        }
+        
+        .about {
+            width: 40%;
+        }
+        
+        .sec-1 h2 {
+            font-size: 17px;
+            color: lightgray;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .about p {
+            text-align: justify;
+            color: grey;
+            line-height: 25px;
+            margin-top: 10px;
+        }
+        
+        .sec-1 ul {
+            list-style: none;
+        }
+        
+        .sec-1 ul li {
+            list-style: none;
+            padding: 4px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+        
+        a:hover {
+            color: orange;
+        }
+        
+        span {
+            color: grey;
+        }
+        
+        i {
+            color: grey;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        
+        .sec-2 {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            align-items: center;
+        }
+        
+        .sec-2 h2 {
+            color: white;
+            font-size: 24px;
+            padding: 0;
+        }
+        
+        .sec-2 a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: white;
+            background-color: red;
+            margin-left: 10px;
+            border-radius: 20px;
+            font-size: 20px;
+        }
+        
+        .sec-2 a:hover {
+            background-color: orange;
+        }
+        
+        .sec-3 {
+            display: flex;
+            justify-content: center;
+            padding: 20PX;
+        }
+        
+        .sec-3 ul {
+            list-style: none;
+            margin: 20px;
+        }
+        
+        .sec-3 ul li {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            padding: 20px;
+            background-color: rgb(20, 14, 14);
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .sec-3 ul li i {
+            color: white;
+            font-size: 24px;
+            line-height: 20px;
+            text-align: center;
+        }
+        
+        .sec-3 ul li:nth-child(1):hover {
+            background-color: rgb(23, 73, 90);
+        }
+        
+        .sec-3 ul li:nth-child(2):hover {
+            background-color: rgb(84, 175, 206);
+        }
+        
+        .sec-3 ul li:nth-child(3):hover {
+            background-color: rgb(204, 22, 22);
+        }
+        
+        .sec-3 ul li:nth-child(4):hover {
+            background-color: rgb(30, 82, 194);
+        }
+        
+        .sec-3 ul li:nth-child(5):hover {
+            background-color: rgb(194, 30, 98);
+        }
+        
+        .sec-4 {
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            padding: 30px;
+        }
+        
+        .sec-4 p {
+            color: grey;
+            position: relative;
+        }
+        
+        .sec-4 p::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+            background-color: yellow;
+            transition: all 0.3s;
+        }
+        
+        .sec-4 p::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: -10px;
+            background-color: yellow;
+            transition: all 0.3s;
+        }
+        
+        .sec-4 p:hover::before {
+            width: 100%;
+        }
+        
+        .sec-4 p:hover::after {
+            width: 100%;
+        }
+        
+        .sec-4 p a {
+            color: blue;
+        }
+        
+        .sec-4 p a:hover {
+            color: orange;
+        }
+        
+        hr {
+            opacity: 0.2;
+        }
+        
+        @media(max-width: 760px) {
+            .content {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                color: black;
+                font-weight: bolder;
+            }
+            footer {
+                width: 100%;
+                background-color: rgb(43, 32, 32);
+            }
+            .sec-1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding: 30px 10px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .about {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .sec-1 h2 {
+                font-size: 17px;
+                color: lightgray;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+            .about p {
+                text-align: justify;
+                color: grey;
+                line-height: 25px;
+                margin-top: 10px;
+            }
+            .sec-1 ul {
+                list-style: none;
+            }
+            .sec-1 ul li {
+                list-style: none;
+                padding: 4px;
+            }
+            a {
+                text-decoration: none;
+                color: gray;
+            }
+            a:hover {
+                color: orange;
+            }
+            span {
+                color: grey;
+            }
+            i {
+                color: grey;
+                font-size: 20px;
+                margin-right: 5px;
+            }
+            .sec-2 {
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+                align-items: center;
+            }
+            .sec-2 h2 {
+                color: white;
+                font-size: 24px;
+                padding: 0;
+            }
+            .sec-2 a {
+                display: inline-block;
+                padding: 10px 15px;
+                color: white;
+                background-color: red;
+                margin-left: 10px;
+                border-radius: 20px;
+                font-size: 20px;
+            }
+            .sec-2 a:hover {
+                background-color: orange;
+            }
+            .sec-3 {
+                display: flex;
+                justify-content: center;
+                padding: 20PX;
+            }
+            .sec-3 ul {
+                list-style: none;
+                margin: 20px;
+            }
+            .sec-3 ul li {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                padding: 20px;
+                background-color: rgb(20, 14, 14);
+                border-radius: 50%;
+                margin-right: 20px;
+            }
+            .sec-3 ul li i {
+                color: white;
+                font-size: 24px;
+                line-height: 20px;
+                text-align: center;
+            }
+            .sec-3 ul li:nth-child(1):hover {
+                background-color: rgb(23, 73, 90);
+            }
+            .sec-3 ul li:nth-child(2):hover {
+                background-color: rgb(84, 175, 206);
+            }
+            .sec-3 ul li:nth-child(3):hover {
+                background-color: rgb(204, 22, 22);
+            }
+            .sec-3 ul li:nth-child(4):hover {
+                background-color: rgb(30, 82, 194);
+            }
+            .sec-3 ul li:nth-child(5):hover {
+                background-color: rgb(194, 30, 98);
+            }
+            .sec-4 {
+                display: flex;
+                justify-content: center;
+                background-color: black;
+                padding: 30px;
+            }
+            .sec-4 p {
+                color: grey;
+                position: relative;
+            }
+            .sec-4 p::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                bottom: -10px;
+                background-color: yellow;
+                transition: all 0.3s;
+            }
+            .sec-4 p::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: -10px;
+                background-color: yellow;
+                transition: all 0.3s;
+            }
+            .sec-4 p:hover::before {
+                width: 100%;
+            }
+            .sec-4 p:hover::after {
+                width: 100%;
+            }
+            .sec-4 p a {
+                color: blue;
+            }
+            .sec-4 p a:hover {
+                color: orange;
+            }
+            hr {
+                opacity: 0.2;
+            }
+        }
+        
+        @media (max-width: 450px) {
+            .content {
+                width: 100%;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 40px;
+                color: black;
+                font-weight: bolder;
+            }
+            footer {
+                width: 100%;
+                background-color: rgb(43, 32, 32);
+            }
+            .sec-1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 30px 10px;
+                justify-content: space-between;
+            }
+            .about {
+                width: 100%;
+            }
+            .sec-1 h2 {
+                font-size: 17px;
+                color: lightgray;
+                text-transform: uppercase;
+                margin-top: 20px;
+                margin-bottom: 5px;
+            }
+            .about p {
+                text-align: justify;
+                color: grey;
+                line-height: 25px;
+                margin-top: 10px;
+            }
+            .sec-1 ul {
+                list-style: none;
+            }
+            .sec-1 ul li {
+                list-style: none;
+                padding: 4px;
+            }
+            a {
+                text-decoration: none;
+                color: gray;
+            }
+            a:hover {
+                color: orange;
+            }
+            span {
+                color: grey;
+            }
+            i {
+                color: grey;
+                font-size: 20px;
+                margin-right: 5px;
+            }
+            .sec-2 {
+                display: flex;
+                justify-content: center;
+                padding: 20px;
+                align-items: center;
+            }
+            .sec-2 h2 {
+                color: white;
+                font-size: 24px;
+                padding: 0;
+            }
+            .sec-2 a {
+                display: inline-block;
+                padding: 10px 15px;
+                color: white;
+                background-color: red;
+                margin-left: 10px;
+                border-radius: 20px;
+                font-size: 20px;
+            }
+            .sec-2 a:hover {
+                background-color: orange;
+            }
+            .sec-3 {
+                display: flex;
+                justify-content: center;
+                padding: 20PX;
+            }
+            .sec-3 ul {
+                list-style: none;
+                margin: 20px;
+            }
+            .sec-3 ul li {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+                background-color: rgb(20, 14, 14);
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            .sec-3 ul li i {
+                color: white;
+                font-size: 24px;
+                line-height: 20px;
+                text-align: center;
+            }
+            .sec-3 ul li:nth-child(1):hover {
+                background-color: rgb(23, 73, 90);
+            }
+            .sec-3 ul li:nth-child(2):hover {
+                background-color: rgb(84, 175, 206);
+            }
+            .sec-3 ul li:nth-child(3):hover {
+                background-color: rgb(204, 22, 22);
+            }
+            .sec-3 ul li:nth-child(4):hover {
+                background-color: rgb(30, 82, 194);
+            }
+            .sec-3 ul li:nth-child(5):hover {
+                background-color: rgb(194, 30, 98);
+            }
+            .sec-4 {
+                display: flex;
+                justify-content: center;
+                background-color: black;
+                padding: 30px;
+            }
+            .sec-4 p {
+                color: grey;
+                position: relative;
+            }
+            .sec-4 p::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                bottom: -10px;
+                background-color: yellow;
+                transition: all 0.3s;
+            }
+            .sec-4 p::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: -10px;
+                background-color: yellow;
+                transition: all 0.3s;
+            }
+            .sec-4 p:hover::before {
+                width: 100%;
+            }
+            .sec-4 p:hover::after {
+                width: 100%;
+            }
+            .sec-4 p a {
+                color: blue;
+            }
+            .sec-4 p a:hover {
+                color: orange;
+            }
+            hr {
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="content">Content Area</section>
+    <footer>
+        <section class="sec-1">
+            <section class="about">
+                <h2>About</h2>
+                <p>Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.HTML (Hypertext Markup Language) is a text-based approach to describing how content contained within an HTML file
+                    is structured. This markup tells a web browser how to display text, images and other forms of multimedia on a webpage.HTML is a formal recommendation by the World Wide Web Consortium (W3C) and is generally adhered to by all major web
+                    browsers, including both desktop and mobile web browsers. HTML5 is the latest version of the specification.</p>
+            </section>
+            <section class="link-1">
+                <h2>Categories</h2>
+                <ul>
+                    <li><a href="#">C</a></li>
+                    <li><a href="#">UI Design</a></li>
+                    <li><a href="#">PHP</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">Android</a></li>
+                    <li><a href="#">Hybrid Apps</a></li>
+                </ul>
+            </section>
+            <section class="link-2">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Contribute</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Disclaimer</a></li>
+                </ul>
+            </section>
+            <section class="link-3">
+                <h2>Contact Us</h2>
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="#">GLA University, Mathura, India</a></li>
+                    <li><i class="fa fa-envelope"></i><a href="#">mahlevanshika@gmail.com</a></li>
+                    <li><i class="fa fa-phone-square"></i><a href="#">Mobile: 9198389888</a></li>
+                    <li><i class="fa fa-facebook-official"></i><a href="#">VanshikaMahle</a></li>
+                </ul>
+            </section>
+        </section>
+        <hr width="100% noshade/">
+        <section class="sec-2">
+            <h2>Register for Free</h2>
+            <a href="#">SignUp</a>
+        </section>
+        <hr width="100%" noshade/>
+        <section class="sec-3">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </section>
+        <section class="sec-4">
+            <p>
+                Copyright &copy; 2020 All Rights Reserved by
+                <a href="https://github.com/VanshikaMahle">Vanshika Mahle</a>
+            </p>
+        </section>
+    </footer>
+</body>
+
+</html>
