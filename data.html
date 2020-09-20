@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data output</title>
+</head>
+
+<body>
+    <div id="data"></div>
+    <a href="form.html">Back to the previous page</a>>
+    <script>
+        const mydata = document.getElementById('data');
+        new URLSearchParams(window.location.search).forEach((value, name) => {
+            mydata.append('${name}: ${value}');
+            mydata.append(document.createElement('br'));
+        });
+    </script>
+</body>
+
+</html>
