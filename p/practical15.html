@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical15</title>
+    <style>
+        body {
+            background-color: lightgrey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        h1 {
+            font-size: 40px;
+            color: rgb(104, 39, 9);
+        }
+        
+        #container {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        button {
+            margin-top: 10px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: lightgreen;
+            outline: none;
+            font-size: 25px;
+            margin: 0 35px;
+        }
+        
+        #count {
+            font-size: 35px;
+            color: rgb(8, 29, 39);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COUNTER</h1>
+    <div id="container">
+
+        <button id="decrease" onclick="decrease()">-</button>
+        <div id="count">0</div>
+        <button id="increase" onclick="increase()">+</button>
+    </div>
+    <script>
+        var counter = parseInt(document.getElementById("count").innerHTML)
+        var b1 = document.getElementById("decrease");
+        b1.disabled = true;
+
+        function decrease() {
+            counter = counter - 1;
+            document.getElementById("count").innerHTML = counter
+            if (counter == 0) {
+                b1.disabled = true;
+            }
+        }
+
+        function increase() {
+            counter = counter + 1;
+            document.getElementById("count").innerHTML = counter
+            b1.disabled = false
+        }
+    </script>
+</body>
+
+</html>

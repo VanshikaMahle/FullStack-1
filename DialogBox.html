@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript dialog boxes</title>
+</head>
+
+<body>
+    <!-- <button id="btn" onclick="alert('I am a dialog box')">Click Me</button> -->
+    <button id="btn" onclick="hello()">Click Me</button>
+    <script>
+        function hello() {
+            // var x = 10;
+            // var y = 20;
+            // alert(x + y);
+            // alert("This is the sum of two numbers: " + (x + y));
+            // var opt = confirm("Enter your Name");
+
+            // var opt = confirm("Do you want to store your data?");
+            // if (opt) {
+            //     alert('Your data saved successfully');
+            // } else {
+            //     alert('Your data not saved');
+            // }
+
+            //prompt dialog box
+            // var name = prompt("Enter your name");
+            // if (name.length > 0 && name != null) {
+            //     alert("Welcome " + name);
+            // } else {
+            //     alert("Welcome Anonymous");
+            // }
+
+            var x = parseInt(prompt("Enter 1st number"));
+            var y = Number(prompt("Enter 2nd number"));
+            if (x + y > 50) {
+                alert("Sum " + (x + y));
+            } else {
+                alert("You are bad");
+            }
+
+        }
+    </script>
+    <noscript>
+        <p style="color: red;">Your JavaScript is disabled, kindly enable it to get the benefits.</p>
+    </noscript>
+</body>
+
+</html>
