@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical16</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(120deg, pink, red);
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+        
+        h1,
+        form {
+            height: 22 vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            margin-top: 40px;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        
+        form input,
+        form button {
+            padding: 12px;
+            border: none;
+            font-size: 25px;
+            background: white;
+            outline: none;
+        }
+        
+        form button {
+            color: rgb(50, 20, 100);
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        form button:hover {
+            color: white;
+            background-color: rgb(16, 170, 24);
+        }
+        
+        .todo-c {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .todo-l {
+            list-style: none;
+            width: 25%;
+        }
+        
+        .todo {
+            margin: 8px;
+            background-color: white;
+            color: black;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .check-btn,
+        .delete-btn {
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            outline: none;
+            padding: 16px;
+            font-size: 16px;
+        }
+        
+        .todo-item {
+            flex: 1;
+            font-size: 20px;
+            margin: 0 5px;
+        }
+        
+        .check-btn {
+            color: rgb(51, 8, 32);
+        }
+        
+        .delete-btn {
+            color: rgb(51, 8, 32);
+            background-color: hotpink;
+            margin-left: 5px;
+        }
+        
+        .check-btn:hover {
+            background-color: rgb(63, 224, 63);
+            color: white;
+        }
+        
+        .delete-btn:hover {
+            background-color: rgb(241, 79, 4);
+            color: white;
+        }
+        
+        .fa-check,
+        .fa-trash {
+            pointer-events: none;
+        }
+        
+        .Complete {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FullStack To-do List</h1>
+    <form>
+        <input type="text" class="todo-i" />
+        <button class="todo-b">
+            <i class="fa fa-plus-square" aria aria-hidden="true"></i>
+        </button>
+    </form>
+
+    <div class="todo-c">
+        <ul class="todo-l">
+
+        </ul>
+    </div>
+    <script>
+        var todoI = document.querySelector(".todo-i");
+        var todoB = document.querySelector(".todo-b");
+        var todoL = document.querySelector(".todo-l");
+        todoB.onclick = create;
+        todoL.onclick = chdelete;
+
+        function create(e) {
+            e.preventDefault();
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("todo");
+            var newL = document.createElement("li");
+            newL.classList.add("todo-item");
+            newL.innerHTML = "List";
+            newL.innerHTML = todoI.value;
+            if (newL.innerHTML == "") {
+                alert("Input can't be blank.")
+            } else {
+                newDiv.appendChild(newL);
+                var checkbtn = document.createElement("button");
+                checkbtn.classList.add("check-btn");
+                checkbtn.innerHTML = '<i class="fa fa-check"></i>';
+                newDiv.appendChild(checkbtn);
+                var deletebtn = document.createElement("button");
+                deletebtn.classList.add("delete-btn");
+                deletebtn.innerHTML = '<i class="fa fa-trash"></i>';
+                newDiv.appendChild(deletebtn);
+                todoL.appendChild(newDiv);
+                todoI.value = "";
+            }
+        }
+
+        function chdelete(e) {
+            var i = e.target;
+            if (i.classList[0] == "delete-btn") {
+                var p = i.parentNode;
+                p.remove();
+            }
+            if (i.classList[0] == "check-btn") {
+                var p = i.parentNode;
+                p.classList.toggle("Complete");
+            }
+        }
+    </script>
+</body>
+
+</html>
