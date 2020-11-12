@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical17</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: black;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        #time {
+            font-size: 8rem;
+        }
+        
+        #greeting {
+            margin-bottom: 15px;
+        }
+        
+        #name {
+            font-size: 30px;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <time id="time"></time>
+    <h1 id="greeting"></h1>
+    <h2 id="name" contenteditable="true"></h2>
+    <h3 id="day"></h3>
+    <script>
+        const time = document.getElementById("time");
+        const greeting = document.getElementById("greeting");
+        const name = document.getElementById("name");
+        const day = document.getElementById("day");
+
+        name.addEventListener("keypress", setName);
+        name.addEventListener("blur", setName);
+
+        function showtime() {
+            let today = new Date();
+            let hour = today.getHours();
+            let min = today.getMinutes();
+            let sec = today.getSeconds();
+            let date = today.toDateString();
+
+            const amPm = hour >= 12 ? 'PM' : 'AM';
+
+            hour = hour % 12 || 12;
+            time.innerHTML = `${addZero(hour)}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${amPm}`;
+            day.innerHTML = `${date}`;
+            setTimeout(showtime, 1000);
+        }
+
+        function addZero(n) {
+            return ((parseInt(n, 10)) < 10 ? '0' : '') + n;
+        }
+
+        function setGreeting() {
+            let today = new Date();
+            let hour = today.getHours();
+
+            if (hour < 12) {
+                document.body.style.backgroundImage = 'url("img/morning.png")';
+                greeting.innerHTML = 'Good Morning';
+                document.body.style.color = "white";
+            } else if (hour < 18) {
+                document.body.style.backgroundImage = 'url("img/afternoon.png")';
+                greeting.innerHTML = 'Good Afternoon';
+                document.body.style.color = "black";
+            } else {
+                document.body.style.backgroundImage = 'url("img/evening.png")';
+                greeting.innerHTML = 'Good Evening';
+                document.body.style.color = "darkblue";
+            }
+        }
+
+        function getName() {
+            if (localStorage.getItem('myName') == null) {
+                name.innerHTML = "[Enter Name]";
+            } else {
+                name.innerHTML = localStorage.getItem("myName");
+            }
+        }
+
+        function setName(e) {
+            if (e.type == "keypress") {
+                if (e.keyCode == 13) {
+                    localStorage.setItem('myName', e.target.innerHTML);
+                    name.blur();
+                }
+            } else {
+                localStorage.setItem('myName', e.target.innerHTML);
+            }
+        }
+        showtime();
+        setGreeting();
+        getName();
+    </script>
+</body>
+
+</html>
